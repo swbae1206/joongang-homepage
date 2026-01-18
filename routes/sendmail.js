@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  // const { name, author, isComplete, date, uid } = req.body;
+  let { company, name, email, title, message } = req.body;
+
+  message = message.replace(/\n/g, "<br>");
   
   const nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
@@ -19,19 +21,42 @@ router.post("/", async (req, res) => {
   const mailOptions = {
     from: "swbae77@naver.com",
     to: "swbae77@naver.com",
-    subject: "고객이 중앙기계에 문의 메일을 보냈습니다.",
-    text: "Node.js로 보내는 첫 이메일입니다!",
+    subject: email + " 고객이 중앙기계에 문의 메일을 보냈습니다.",
+    html: `
+      <div>
+        <div style="display: flex; gap: 15px;">
+          <p style="margin: 0; width: 100px;">회사</p>
+          <p style="margin: 0;">: ${company}</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <p style="margin: 0; width: 100px;">이름</p>
+          <p style="margin: 0;">: ${name}</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <p style="margin: 0; width: 100px;">이메일</p>
+          <p style="margin: 0;">: ${email}</p>
+        </div>
+        <div style="display: flex; gap: 15px;">
+          <p style="margin: 0; width: 100px;">제목</p>
+          <p style="margin: 0;">: ${title}</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0px;">
+          <p style="margin-top: 10px; width: 100px;">내용 :</p>
+          <p style="margin: 0px;">${message}</p>
+        </div>
+      </div>
+    `,
   };
     
   try {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        res.status(500).send(error.message);
+        res.send({ result: "fail" });
       }
-      res.send("success")
+      res.send({ result: "success" })
     });
   } catch (err) {
-    res.status(500).send(error.message);
+    res.send({ result: "fail" });
   }
   
 })

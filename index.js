@@ -10,10 +10,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.get("/", (req, res) => {
-//   res.send("Welcome to our server...");
-// });
-
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {

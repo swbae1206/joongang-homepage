@@ -20,8 +20,8 @@ router.post("/", async (req, res) => {
     
   const mailOptions = {
     from: "swbae77@naver.com",
-    to: "swbae77@naver.com",
-    subject: email + " 고객이 중앙기계에 문의 메일을 보냈습니다.",
+    to: "ca3011@e-joongang,com",
+    subject: email + " 고객이 중앙기계공업(주)에 문의 메일을 보냈습니다.",
     html: `
       <div>
         <div style="display: flex; gap: 15px;">

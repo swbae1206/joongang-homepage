@@ -146,15 +146,15 @@ nav .navigation ul li a.lang:hover {
   background-position: center;
 }
 .swiper .swiper-wrapper .slide1 {
-  background-image : linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("images/home-back-01.jpg");
+  background-image :  url("images/home-back-01.jpg");
 }
 
 .swiper .swiper-wrapper .slide2 {
-  background-image : linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("images/home-back-02.jpg");
+  background-image : linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("images/home-back-02.jpg");
 }
 
 .swiper .swiper-wrapper .slide3 {
-  background-image : linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("images/home-back-03.jpg");
+  background-image : linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("images/home-back-03.jpg");
 }
 
 .swiper-slide h2 {

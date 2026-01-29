@@ -5,6 +5,8 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   let { company, name, email, title, message } = req.body;
 
+  console.log(company, name, email, title, message);
+
   message = message.replace(/\n/g, "<br>");
   
   const nodemailer = require("nodemailer");
@@ -20,7 +22,7 @@ router.post("/", async (req, res) => {
     
   const mailOptions = {
     from: "swbae77@naver.com",
-    to: "ca3011@e-joongang,com",
+    to: "joongang@e-joongang.com",
     subject: email + " 고객이 중앙기계공업(주)에 문의 메일을 보냈습니다.",
     html: `
       <div>
@@ -53,7 +55,8 @@ router.post("/", async (req, res) => {
       if (error) {
         res.send({ result: "fail" });
       }
-      res.send({ result: "success" })
+      console.log("aaaaaaaaaaaaaa")
+      res.send({ result: "success" });
     });
   } catch (err) {
     res.send({ result: "fail" });

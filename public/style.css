@@ -697,6 +697,7 @@ scroll-margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
+  word-break: normal;
 }
 
 #products-section {
@@ -746,7 +747,7 @@ scroll-margin-top: 100px;
 
 #products-menu .menu i {
   font-size: 24px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 #products-menu .menu i.active {
@@ -838,6 +839,10 @@ scroll-margin-top: 100px;
 }
 
 #products-container .product .contents.ca-ln-press-section .lower-img {
+  margin-top: 30px;
+}
+
+#products-container .product .second {
   margin-top: 30px;
 }
 
@@ -938,7 +943,7 @@ scroll-margin-top: 100px;
   margin-bottom: 40px;
 }
 
-#equipment-container h2 i {
+#equipment-container h3 i {
   margin-right: 10px;
 }
 
@@ -1172,7 +1177,7 @@ scroll-margin-top: 100px;
   /* NAV */
 
   nav img {
-    width: 250px;
+    width: 290px;
   }
     
   nav .navigation ul {
@@ -1216,6 +1221,11 @@ scroll-margin-top: 100px;
   nav .navigation ul li a.blue {
     color: #fff;
     border: 1px solid #fff;
+  }
+
+  nav .navigation ul li a.lang {
+    color: rgb(250, 250, 251);
+    border: 1px solid #fcfcfc;
   }
 
   #menu-btn {

@@ -25,7 +25,7 @@ sendMessage.addEventListener("click", function () {
     return
   }
 
-  fetch("http://localhost:3500/api/sendmail", {
+  fetch("http://15.165.20.67:3500/api/sendmail", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,21 +35,22 @@ sendMessage.addEventListener("click", function () {
       name: name.value,
       email: email.value,
       title: title.value,
-      message: message.value
+      message: message.value,
     }),
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       if (data.result === "success") {
         alert("메시지 전송이 완료되었습니다");
-        company.value = ""
-        name.value = ""
-        email.value = ""
-        title.value = ""
-        message.value = ""
+        company.value = "";
+        name.value = "";
+        email.value = "";
+        title.value = "";
+        message.value = "";
       } else {
         alert("메시지 전송이 실패했습니다.\n다른 방법으로 시도하세요.");
       }
-    })
+    });
 
 })
